@@ -1,0 +1,78 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+/* navbar */
+.navbar-brand {
+  text-align: center;
+  font-family: "Amaranth", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+.nav-link {
+  text-transform: capitalize;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+/* jumbotron */
+.signin,
+.jumbotron {
+  background-image: url(../images/black.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+}
+.textJumbo {
+  margin-top: 200px;
+  font-family: "Amaranth", sans-serif;
+  font-weight: 300;
+}
+/* footer */
+.logo {
+  height: 5vmin;
+}
+/* category */
+.container h2,
+.pictCat p,
+.newArr {
+  font-family: "Amaranth", sans-serif;
+}
+.category {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.pictProduct {
+  width: 45vmin;
+}
+/* new arrivals */
+.newArrcard {
+  width: 250px;
+}
+@media (min-width: 992px) {
+  /* navbar */
+  .nav-link {
+    text-transform: uppercase;
+    margin-right: 30px;
+  }
+  .nav-link,
+  .navbar-brand {
+    text-shadow: 0 0 4px grey;
+    color: white !important;
+  }
+  /* jumbotron */
+  .signin,
+  .jumbotron {
+    margin-top: -70px;
+    height: 650px;
+  }
+  .textJumbo {
+    margin-top: 200px;
+  }
+  /* content sign in */
+  .content {
+    background-color: hsla(0, 0%, 0%, 0.6);
+    border-radius: 30px;
+    width: 60vmin;
+    height: 60vmin;
+  }
+}
