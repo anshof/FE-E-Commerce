@@ -5,6 +5,8 @@ const initialState = {
   is_login: false,
   namaPengguna: "",
   kataKunci: "",
+  token:"",
+  status:"",
 };
 
 export default function userReducer(userState = initialState, action) {
@@ -17,11 +19,15 @@ export default function userReducer(userState = initialState, action) {
     case "SUCCESS_LOGIN":
       return {
         ...userState,
-        username: action.payload.username,
-        email: action.payload.email,
-        avatar: action.payload.avatar,
+        token: action.payload.token,
+        // email: action.payload.email,
+        status: action.payload.status,
         is_login: true,
       };
+      case "SUCCESS_SIGNUP":
+      return {
+        ...userState,
+          };
     case "SUCCESS_LOGOUT":
       return {
         ...userState,

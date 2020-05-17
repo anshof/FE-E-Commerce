@@ -2,15 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/style.css";
 
-const login = localStorage.getItem("is_login");
 const Navigation = (props, postSignout) => {
   postSignout = () => {
     props.doSignOut();
     props.history.push("/");
   };
 
+  const login = localStorage.getItem("is_login");
+  const status = localStorage.getItem("status");
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light">
       <div className="container">
         <Link className="navbar-brand" to="/">
           SOPHISTICATED
@@ -29,55 +31,56 @@ const Navigation = (props, postSignout) => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Promo
+              <Link className="nav-link navBarText" to="/shopnow">
+                SHOP now!
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Tops
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Bottoms
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Dress
-              </Link>
-            </li>
-            {login ? (
-              <ul className="navbar-nav d-lg-flex">
-                <li className="nav-item">
-                  <Link to="/profile" className=" nav-link">
-                    Account
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/profile">
-                    Cart
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="/signin"
-                    onClick={() => postSignout()}
-                  >
-                    Sign Out
-                  </Link>
-                </li>
-              </ul>
-            ) : (
+          </ul>
+          {login ? (
+            <ul className="navbar-nav d-lg-flex">
               <li className="nav-item">
-                <Link className="nav-link" to="/profile">
-                  Sign In
+                <Link to="/profile" className="navBarText nav-link">
+                  <i class="fa fa-user"></i>
                 </Link>
               </li>
-            )}
-          </ul>
+              <li className="nav-item">
+                <Link className="navBarText nav-link" to="/profile">
+                  <i class="fa fa-shopping-bag"></i>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="navBarText nav-link"
+                  to="/signin"
+                  onClick={() => postSignout()}
+                >
+                  Sign Out
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <ul className="navbar-nav d-lg-flex">
+              <li className="nav-item">
+                <Link className="navBarText nav-link" to="/signin">
+                  <i class="fa fa-user"></i>
+                </Link>
+              </li>
+            </ul>
+          )}
+
+          {status === "seller" ? (
+            <ul className="navbar-nav">
+              <li className="">
+                <Link to="/startselling" className="nav-link">
+                  Start Selling
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <ul className="navbar-nav">
+              <li className=""></li>
+            </ul>
+          )}
         </div>
       </div>
     </nav>

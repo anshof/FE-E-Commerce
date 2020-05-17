@@ -1,10 +1,11 @@
 import React from "react";
+
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import Navigation from "../components/Navigation";
 import { doSignOut } from "../store/action/actionUser";
+import Navigation from "../components/Navigation";
+
 import "../css/style.css";
-import Footer from "../components/Footer";
 
 class Profile extends React.Component {
   render() {
@@ -20,19 +21,12 @@ class Profile extends React.Component {
               <div className="container text-center mt-5 d-flex justify-content-center">
                 <div>
                   <img
-                    src={this.props.avatar}
+                    src={require("../images/user.png")}
                     alt="avatar"
-                    style={{ height: "25vmin" }}
+                    style={{ height: "20vmin" }}
                   />
                   <h1 className="text-white">Profile</h1>
-                  <p>
-                    <label className="text-white">Email:</label>{" "}
-                    {this.props.email}
-                  </p>
-                  <p>
-                    <label className="text-white">Username:</label>{" "}
-                    {this.props.username}
-                  </p>
+                  <h3 className="text-white">WELCOME BACK!!! <hr />Happy Shopping...</h3>
                 </div>
               </div>
             </section>

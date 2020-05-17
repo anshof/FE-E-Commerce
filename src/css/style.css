@@ -6,21 +6,23 @@ body {
   text-align: center;
   font-family: "Amaranth", sans-serif;
   font-weight: 400;
-  color: white;
+  color: #222831;
 }
-.nav-link {
+.navbar {
+  background-color: #c1a57b;
+}
+.navBarText {
   text-transform: capitalize;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
 }
 /* jumbotron */
-.signin,
-.jumbotron {
-  background-image: url(../images/black.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 500px;
+.carousel-item {
+  margin-top: -170px;
+}
+.text-carousel,
+.textParallax {
+  font-family: "Amaranth", sans-serif;
 }
 .textJumbo {
   margin-top: 200px;
@@ -31,15 +33,13 @@ body {
 .logo {
   height: 5vmin;
 }
-/* category */
-.container h2,
-.pictCat p,
-.newArr {
-  font-family: "Amaranth", sans-serif;
+.page-footer {
+  background-color: #c1a57b;
 }
-.category {
-  margin-top: 100px;
-  margin-bottom: 100px;
+/* category */
+.textCategory {
+  font-family: "Amaranth", sans-serif;
+  color: #222831;
 }
 .pictProduct {
   width: 45vmin;
@@ -47,6 +47,52 @@ body {
 /* new arrivals */
 .newArrcard {
   width: 250px;
+}
+/* start selling */
+.startselling {
+  font-size: 12px;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  border-radius: 30px;
+  width: 60vmin;
+  height: 320vmin;
+}
+.textSell {
+  font-size: large;
+}
+/* product detail */
+.detProd {
+  margin: 80px 0;
+  width: 240px;
+}
+.text-Prod {
+  color: #222831 !important;
+}
+/* parallax products */
+.jumbotron {
+  text-align: center;
+  background-image: url(../images/bg2.jpg);
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-size: cover;
+  height: 400px;
+  background-attachment: fixed;
+}
+/* store */
+.store {
+  text-align: center;
+  background-image: url(../images/store.jpg);
+  background-repeat: no-repeat;
+  background-position-x: 150px;
+  background-position-y: -100px;
+  background-size: cover;
+  height: 400px;
+  background-attachment: fixed;
+}
+/* for all components in home */
+.parallax,
+.ourStores {
+  margin: 100px 50px;
 }
 @media (min-width: 992px) {
   /* navbar */
@@ -56,14 +102,14 @@ body {
   }
   .nav-link,
   .navbar-brand {
-    text-shadow: 0 0 4px grey;
-    color: white !important;
+    /* text-shadow: 0 0 4px grey; */
+    color: #222831 !important;
   }
   /* jumbotron */
   .signin,
-  .jumbotron {
-    margin-top: -70px;
-    height: 650px;
+  .signup {
+    margin-top: -60px;
+    height: 700px;
   }
   .textJumbo {
     margin-top: 200px;
@@ -74,5 +120,32 @@ body {
     border-radius: 30px;
     width: 60vmin;
     height: 60vmin;
+  }
+  /* sign up */
+  .contentSignup {
+    background-color: hsla(0, 0%, 0%, 0.6);
+    border-radius: 30px;
+    width: 60vmin;
+    height: 70vmin;
+  }
+  /* start selling */
+  .startselling {
+    background-color: hsla(0, 0%, 0%, 0.6);
+    border-radius: 30px;
+    width: 60vmin;
+    height: 150vmin;
+  }
+  .textSell {
+    font-size: 16px;
+  }
+  /* parallax products */
+  .jumbotron {
+    background-image: url(../images/bg2.jpg);
+    background-repeat: no-repeat;
+    background-position-x: -200px;
+    background-position-y: -500px;
+    background-size: cover;
+    height: 400px;
+    background-attachment: fixed;
   }
 }

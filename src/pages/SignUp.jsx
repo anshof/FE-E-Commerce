@@ -1,37 +1,28 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-
-import {
-  doLogin,
-  changeInputUser,
-  doSignOut,
-} from "../store/action/actionUser";
+import { doLogin, changeInputUser, signUp } from "../store/action/actionUser";
 
 import Navigation from "../components/Navigation";
 
-class SignIn extends Component {
-  postLogin = async () => {
-    await this.props.doLogin();
-    const is_login = this.props.login;
-    if (is_login) {
-      this.props.history.push("/profile");
-    }
+class SignUp extends Component {
+  postSignup = async () => {
+    await this.props.signUp();
+    this.props.history.push("/signin");
   };
 
   render() {
-    console.warn("cek props dari page signin", this.props);
+    console.warn("cek props dari page signup", this.props);
     const message = this.props.location.state
       ? this.props.location.state.message
       : "";
     return (
       <div>
         <Navigation {...this.props} />
-        <div className="d-flex signin d-flex justify-content-center align-items-center">
-          <section className="content">
+        <div className="d-flex signup d-flex justify-content-center align-items-center">
+          <section className="contentSignup">
             <div className="container text-center mt-5 d-flex justify-content-center">
               <form className="" onSubmit={(e) => e.preventDefault()}>
-                <h2 className="text-white text-uppercase">LOGIN</h2>
+                <h2 className="text-white text-uppercase">SIGN UP</h2>
                 <div className="form-group">
                   <label
                     for="exampleInputEmail1"
@@ -65,20 +56,34 @@ class SignIn extends Component {
                     onChange={(e) => this.props.changeInput(e)}
                   />
                 </div>
+                <div className="form-group">
+                  <label
+                    for="exampleInputPassword1"
+                    className="text-white text-left"
+                  >
+                    <h5>What do you wanna do:</h5>
+                  </label>
+                  <div class="form-check">
+                    <input class="form-check-input d-block" onChange={(e) => this.props.changeInput(e)} type="radio" name="status" id="exampleRadios1" value="seller"/>
+                  <label class="d-block text-white text-left form-check-label" for="exampleRadios1">
+                      Sell something
+                    </label>
+                    <input class="form-check-input d-block" onChange={(e) => this.props.changeInput(e)} type="radio" name="status" id="exampleRadios2" value="buyer"/>
+                    <label class="d-block text-left text-white form-check-label" for="exampleRadios2">
+                      Buy something
+                    </label>
+                  </div>
+                </div>
                 <button
                   type="submit"
                   className="btn btn-dark btn-block mr-3 mt-2 text-white"
-                  onClick={() => this.postLogin()}
+                  onClick={() => this.postSignup()}
                 >
-                  Sign In
+                  Sign Up
                 </button>
                 <p className="mt-2 mb-3" style={{ color: "blue" }}>
                   {message}
                 </p>
-                <Link className="nav-link text-capitalize" to="/signup">
-                  <span>Create account?</span>
-                  <span> Click here</span>
-                </Link>
               </form>
             </div>
           </section>
@@ -99,6 +104,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   changeInput: (e) => changeInputUser(e),
   doLogin,
-  doSignOut,
+  signUp,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
