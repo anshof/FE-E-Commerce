@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import ProductDetailComp from "../components/ProductDetailComp";
 
 import { connect } from "react-redux";
 import { doSignOut } from "../store/action/actionUser";
@@ -12,6 +11,12 @@ class Product extends Component {
   componentDidMount = async () => {
     console.log("cek mounted");
     this.props.getProduct();
+  };
+
+  // change router detail to get product detail
+  changeRouterDetail = (e) => {
+    e.preventDefault();
+    this.props.history.push("/detail/" + e.target.value);
   };
 
   render() {
@@ -38,7 +43,7 @@ class Product extends Component {
               padding: "0",
             }}
           >
-            {baris.map((item, value) => (
+            {baris.map((item) => (
               <div
                 className="col-sm-3 d-flex justify-content-center "
                 style={{
@@ -47,12 +52,28 @@ class Product extends Component {
                   padding: "0",
                 }}
               >
-                <ProductDetailComp
-                  id={item.id}
-                  nama={item.name}
-                  harga={item.price}
-                  gambar={item.img}
-                />
+                <div className="detProd">
+                  <div className="d-flex justify-content-center card">
+                    <img
+                      className="text-center card-img-top"
+                      src={item.img}
+                      alt={item.name}
+                    />
+                    <div className="card-body">
+                      <p className="card-text font-weight-bold text-uppercase">
+                        {item.name}
+                      </p>
+                      <p>Rp {item.price}</p>
+                      <button
+                        className="btn btn-outline-dark"
+                        value={item.id}
+                        onClick={(e) => this.changeRouterDetail(e)}
+                      >
+                        See details
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -64,6 +85,7 @@ class Product extends Component {
 }
 const mapStateToProps = (state) => {
   return {
+    login: state.user.is_login,
     dataProducts: state.product,
   };
 };

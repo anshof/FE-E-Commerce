@@ -10,7 +10,7 @@ import SignUp from "../pages/SignUp";
 import store from "../store";
 import StartSelling from "../pages/StartSelling";
 import Products from "../pages/Products";
-// import MoreDetails from "../pages/MoreDetails";
+import ProductDetailLast from "../pages/ProductDetailLast";
 
 const MainRoutes = () => {
   return (
@@ -22,8 +22,8 @@ const MainRoutes = () => {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/shopnow" component={Products} />
-          {/* <Route exact path="/:detail" component={MoreDetails} /> */}
           <Route exact path="/:category" component={Products} />
+          <Route exact path="/detail/:id" component={ProductDetailLast} />
           <Route exact path="/startselling" component={StartSelling} />
         </Switch>
       </BrowserRouter>

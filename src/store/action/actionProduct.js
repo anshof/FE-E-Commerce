@@ -40,7 +40,7 @@ export const getProductCategory = (category) => {
 
 export const getDetailProduct = (category) => {
   return async (dispatch) => {
-    const response = await axios.get("http://0.0.0.0:5050/id/" + category);
+    const response = await axios.get("http://0.0.0.0:5050/product/" + category);
     dispatch({
       type: "REQUEST_CATEGORY_PRODUCT_BY_ID",
       payload: response.data,
