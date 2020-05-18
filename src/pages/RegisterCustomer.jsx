@@ -17,7 +17,7 @@ class RegisterCustomer extends Component {
     await this.props.postCustomer();
     this.props.userData.statusError
       ? alert("you're not registered")
-      : this.props.history.push("/profile");
+      : this.props.history.push("/");
   };
 
   render() {

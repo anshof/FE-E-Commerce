@@ -28,7 +28,7 @@ class Checkout extends React.Component {
             style={{ fontFamily: "Amaranth", color: "#222831" }}
             to="/"
           >
-            SOPHISTICATED
+            <h5>SOPHISTICATED</h5>
           </Link>
         </div>
 
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => {
   return {
     login: state.user.is_login,
     data: state.cart.dataCart,
-    dataDetail: state.product.dataDetail,
+    detailData: state.product.detailData,
   };
 };
 

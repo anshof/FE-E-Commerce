@@ -42,9 +42,7 @@ export const postCart = (item) => {
         dispatch({ type: "SUCCESS_POST_CART" });
       })
       .catch(function (error) {
-        alert(
-          "You are not filling your personal data yet, please fill your personal data"
-        );
+        alert("Please fill your personal data");
       });
   };
 };

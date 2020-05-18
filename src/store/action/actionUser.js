@@ -113,14 +113,14 @@ export const postCustomer = (props) => {
           },
         })
         .then(async (response) => {
-          dispatch({ type: "SUCCESS_PROFILE" });
+          dispatch({ type: "SUCCESS_POST_CUSTOMER" });
         })
         .catch(function (error) {
           console.log(error);
         });
     } else if (status === "seller") {
       await axios
-        .post("http://0.0.0.0:5050/customer/profile", myJSON, {
+        .post("http://0.0.0.0:5050/seller/profile", myJSON, {
           headers: {
             "Content-Type": "application/json; charset=utf-8",
             Accept: "application/json; charset=utf-8",
@@ -128,7 +128,7 @@ export const postCustomer = (props) => {
           },
         })
         .then(async (response) => {
-          dispatch({ type: "SUCCESS_PROFILE" });
+          dispatch({ type: "SUCCESS_POST_CUSTOMER" });
         })
         .catch(function (error) {
           console.log(error);
