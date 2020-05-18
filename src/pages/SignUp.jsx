@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { doLogin, changeInputUser, signUp } from "../store/action/actionUser";
 
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 class SignUp extends Component {
   postSignup = async () => {
@@ -63,13 +64,33 @@ class SignUp extends Component {
                   >
                     <h5>What do you wanna do:</h5>
                   </label>
-                  <div class="form-check">
-                    <input class="form-check-input d-block" onChange={(e) => this.props.changeInput(e)} type="radio" name="status" id="exampleRadios1" value="seller"/>
-                  <label class="d-block text-white text-left form-check-label" for="exampleRadios1">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input d-block"
+                      onChange={(e) => this.props.changeInput(e)}
+                      type="radio"
+                      name="status"
+                      id="exampleRadios1"
+                      value="seller"
+                    />
+                    <label
+                      className="d-block text-white text-left form-check-label"
+                      for="exampleRadios1"
+                    >
                       Sell something
                     </label>
-                    <input class="form-check-input d-block" onChange={(e) => this.props.changeInput(e)} type="radio" name="status" id="exampleRadios2" value="buyer"/>
-                    <label class="d-block text-left text-white form-check-label" for="exampleRadios2">
+                    <input
+                      className="form-check-input d-block"
+                      onChange={(e) => this.props.changeInput(e)}
+                      type="radio"
+                      name="status"
+                      id="exampleRadios2"
+                      value="buyer"
+                    />
+                    <label
+                      className="d-block text-left text-white form-check-label"
+                      for="exampleRadios2"
+                    >
                       Buy something
                     </label>
                   </div>
@@ -88,6 +109,7 @@ class SignUp extends Component {
             </div>
           </section>
         </div>
+        <Footer />
       </div>
     );
   }

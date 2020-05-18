@@ -6,6 +6,7 @@ import { doSignOut } from "../store/action/actionUser";
 import Navigation from "../components/Navigation";
 
 import "../css/style.css";
+import Footer from "../components/Footer";
 
 class Profile extends React.Component {
   render() {
@@ -26,11 +27,15 @@ class Profile extends React.Component {
                     style={{ height: "20vmin" }}
                   />
                   <h1 className="text-white">Profile</h1>
-                  <h3 className="text-white">WELCOME BACK!!! <hr />Happy Shopping...</h3>
+                  <h3 className="text-white">
+                    WELCOME BACK!!! <hr />
+                    Happy Shopping...
+                  </h3>
                 </div>
               </div>
             </section>
           </div>
+          <Footer />
         </div>
       );
     }

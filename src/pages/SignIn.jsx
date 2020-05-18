@@ -9,6 +9,7 @@ import {
 } from "../store/action/actionUser";
 
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 class SignIn extends Component {
   postLogin = async () => {
@@ -83,6 +84,7 @@ class SignIn extends Component {
             </div>
           </section>
         </div>
+        <Footer />
       </div>
     );
   }

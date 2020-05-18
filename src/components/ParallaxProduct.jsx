@@ -15,7 +15,7 @@ const ParallaxProduct = () => {
             <h4 className="text-left">
               Always trending and catch everyone's eyes.
             </h4>
-            <Link class="btn btn-outline-dark" to="/shopnow" role="button">
+            <Link className="btn btn-outline-dark" to="/shopnow" role="button">
               Shop Now
             </Link>
           </div>

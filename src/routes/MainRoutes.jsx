@@ -11,6 +11,10 @@ import store from "../store";
 import StartSelling from "../pages/StartSelling";
 import Products from "../pages/Products";
 import ProductDetailLast from "../pages/ProductDetailLast";
+import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
+import NotFound from "../pages/NotFound";
+import RegisterCustomer from "../pages/RegisterCustomer";
 
 const MainRoutes = () => {
   return (
@@ -22,9 +26,13 @@ const MainRoutes = () => {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/shopnow" component={Products} />
+          <Route exact path="/startselling" component={StartSelling} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/registercustomer" component={RegisterCustomer} />
+          <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/:category" component={Products} />
           <Route exact path="/detail/:id" component={ProductDetailLast} />
-          <Route exact path="/startselling" component={StartSelling} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>

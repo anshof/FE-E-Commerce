@@ -13,7 +13,7 @@ const Store = () => {
             <h4 className="text-left">
               Jl. Tidar No. 23, Karang Besuki, Kota Malang - Sukun, Jawa Timur
             </h4>
-            <a class="btn btn-outline-dark" href="/" role="button">
+            <a className="btn btn-outline-dark" href="/" role="button">
               Visit Now
             </a>
           </div>

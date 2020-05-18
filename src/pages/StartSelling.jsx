@@ -20,11 +20,16 @@ class StartSelling extends Component {
     return (
       <div>
         <Navigation {...this.props} />
-        <div className="my-5 d-flex justify-content-center align-items-center">
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ margin: "80px 60px" }}
+        >
           <section className="startselling">
             <div className="container text-center mt-5 d-flex justify-content-center">
               <form className="" onSubmit={(e) => e.preventDefault()}>
-                <p className="text-white textSell text-uppercase">Lets Start Selling</p>
+                <p className="text-white textSell text-uppercase">
+                  Lets Start Selling
+                </p>
                 <div className="form-group">
                   <label
                     for="exampleInputEmail1"

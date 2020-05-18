@@ -39,13 +39,13 @@ const Navigation = (props, postSignout) => {
           {login ? (
             <ul className="navbar-nav d-lg-flex">
               <li className="nav-item">
-                <Link to="/profile" className="navBarText nav-link">
-                  <i class="fa fa-user"></i>
+                <Link to="/registercustomer" className="navBarText nav-link">
+                  <i className="fa fa-user"></i>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="navBarText nav-link" to="/profile">
-                  <i class="fa fa-shopping-bag"></i>
+                  <i className="fa fa-shopping-bag"></i>
                 </Link>
               </li>
               <li className="nav-item">
@@ -62,7 +62,7 @@ const Navigation = (props, postSignout) => {
             <ul className="navbar-nav d-lg-flex">
               <li className="nav-item">
                 <Link className="navBarText nav-link" to="/signin">
-                  <i class="fa fa-user"></i>
+                  <i className="fa fa-user"></i>
                 </Link>
               </li>
             </ul>

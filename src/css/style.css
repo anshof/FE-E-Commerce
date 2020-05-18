@@ -21,7 +21,8 @@ body {
   margin-top: -170px;
 }
 .text-carousel,
-.textParallax {
+.textParallax,
+.namaProduk {
   font-family: "Amaranth", sans-serif;
 }
 .textJumbo {
@@ -93,6 +94,14 @@ body {
 .parallax,
 .ourStores {
   margin: 100px 50px;
+}
+/* details */
+#baju-utama {
+  width: 250px;
+}
+/* register customer */
+.personalData {
+  margin: 80px 60px;
 }
 @media (min-width: 992px) {
   /* navbar */
