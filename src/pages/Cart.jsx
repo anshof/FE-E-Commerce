@@ -159,7 +159,7 @@ const mapStateToProps = (state) => {
   return {
     login: state.user.is_login,
     data: state.cart.dataCart,
-    dataDetail: state.product.dataDetail,
+    detailData: state.product.detailData,
   };
 };
 
