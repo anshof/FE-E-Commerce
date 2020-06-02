@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import Home from "../pages/Home";
@@ -19,7 +19,7 @@ import RegisterCustomer from "../pages/RegisterCustomer";
 const MainRoutes = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={SignUp} />
@@ -34,7 +34,7 @@ const MainRoutes = () => {
           <Route exact path="/detail/:id" component={ProductDetailLast} />
           <Route component={NotFound} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 };
