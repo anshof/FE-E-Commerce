@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/style.css";
-
+import { Link } from "react-router-dom";
 const Store = () => {
   return (
     <div className="container ourStores">
@@ -13,9 +13,9 @@ const Store = () => {
             <h4 className="text-left">
               Jl. Tidar No. 23, Karang Besuki, Kota Malang - Sukun, Jawa Timur
             </h4>
-            <a className="btn btn-outline-dark" href="/" role="button">
+            <Link className="btn btn-outline-dark" to="/" role="button">
               Visit Now
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-6 row-sm-12 text-center store w-lg-50"></div>

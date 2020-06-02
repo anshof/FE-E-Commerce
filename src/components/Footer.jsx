@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="pb-5 page-footer">
@@ -10,65 +10,65 @@ const Footer = () => {
               SOPHISTICATED
             </h2>
             <p className="my-0">
-              <a className="text-white" href="/">
+              <Link className="text-white" to="/">
                 How To Buy
-              </a>
+              </Link>
             </p>
             <p className="my-0">
-              <a className="text-white" href="/">
+              <Link className="text-white" to="/">
                 Our Story
-              </a>
+              </Link>
             </p>
             <p className="my-0">
-              <a className="text-white" href="/">
+              <Link className="text-white" to="/">
                 Shipping Information
-              </a>
+              </Link>
             </p>
             <p className="my-0">
-              <a className="text-white" href="/">
+              <Link className="text-white" to="/">
                 Returns &#38; Exchanges
-              </a>
+              </Link>
             </p>
             <p className="my-0">
-              <a className="text-white" href="/">
+              <Link className="text-white" to="/">
                 Privacy Policy
-              </a>
+              </Link>
             </p>
             <p className="my-0">
-              <a className="text-white" href="/">
+              <Link className="text-white" to="/">
                 Contact Us
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-lg-3 row-sm-12 pt-2">
             <h6 className="font text-white">Get connected with us</h6>
             <ul className="list-unstyled d-flex">
               <li>
-                <a href="#!">
+                <Link to="#!">
                   <img
                     className="logo mt-2 mx-2"
                     src={require("../images/socMed/fb.png")}
                     alt="fb"
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!">
+                <Link to="#!">
                   <img
                     className="logo mt-2 mx-2"
                     src={require("../images/socMed/ig.png")}
                     alt="ig"
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!">
+                <Link to="#!">
                   <img
                     className="logo mt-2 mx-2"
                     src={require("../images/socMed/twitter.png")}
                     alt="twitter"
                   />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -78,19 +78,19 @@ const Footer = () => {
                 <p className="text-white font">Our collections</p>
               </li>
               <li>
-                <a href="#!" className="text-decoration-none text-white font">
+                <Link to="#!" className="text-decoration-none text-white font">
                   Bottom
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!" className="text-decoration-none text-white font">
+                <Link to="#!" className="text-decoration-none text-white font">
                   Dress
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#!" className="text-decoration-none text-white font">
+                <Link to="#!" className="text-decoration-none text-white font">
                   Tops
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
