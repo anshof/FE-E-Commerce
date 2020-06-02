@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Bottom = () => {
   return (
     <div className="container tops my-5">
@@ -7,7 +7,7 @@ const Bottom = () => {
       <div className="row">
         <div className="col-3 my-5">
           <div className="card newArrcard">
-            <a href="/" className="text-decoration-none text-dark">
+            <Link to="/" className="text-decoration-none text-dark">
               <img
                 src={require("../images/product/dress.jpg")}
                 className="card-img-top"
@@ -22,12 +22,12 @@ const Bottom = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-3 my-5">
           <div className="card newArrcard">
-            <a href="/" className="text-decoration-none text-dark">
+            <Link to="/" className="text-decoration-none text-dark">
               <img
                 src={require("../images/product/dress.jpg")}
                 className="card-img-top"
@@ -42,12 +42,12 @@ const Bottom = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-3 my-5">
           <div className="card newArrcard">
-            <a href="/" className="text-decoration-none text-dark">
+            <Link to="/" className="text-decoration-none text-dark">
               <img
                 src={require("../images/product/dress.jpg")}
                 className="card-img-top"
@@ -62,12 +62,12 @@ const Bottom = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-3 my-5">
           <div className="card newArrcard">
-            <a href="/" className="text-decoration-none text-dark">
+            <Link to="/" className="text-decoration-none text-dark">
               <img
                 src={require("../images/product/dress.jpg")}
                 className="card-img-top"
@@ -82,12 +82,12 @@ const Bottom = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-3 my-5">
           <div className="card newArrcard">
-            <a href="/" className="text-decoration-none text-dark">
+            <Link to="/" className="text-decoration-none text-dark">
               <img
                 src={require("../images/product/dress.jpg")}
                 className="card-img-top"
@@ -102,7 +102,7 @@ const Bottom = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
