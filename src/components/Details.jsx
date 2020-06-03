@@ -12,27 +12,38 @@ const Details = (props, postTransaction) => {
   };
   return (
     <Fragment>
-      <div
-        className="container border rounded d-flex align-self-center justify-content-center"
-        style={{ margin: "90px 60px", padding: "0" }}
-      >
-        <div className="row my-5">
-          <div className="col-lg-6 row-sm-12">
-            <img src={props.gambar} alt="baju" id="baju-utama" />
+      <div className="container rounded d-flex" style={{ margin: "30px 60px" }}>
+        <div
+          className="row text-left my-5"
+          style={{ marginLeft: "50px", width: "100%" }}
+        >
+          <div className="col-lg-6 pr-0 br-0 row-sm-12">
+            <img
+              src={props.gambar}
+              alt="baju"
+              id="baju-utama"
+              style={{ width: "400px" }}
+            />
           </div>
-          <div className="col-lg-6 row-sm-12 my-auto mx-auto">
+          <div className="col-lg-6 mt-5 row-sm-12">
             <div>
-              <h4 className="namaProduk">{props.nama}</h4>
+              <h2 className="namaProduk pb-0">{props.nama}</h2>
               <br />
-              <span>Rp.{props.harga}.-</span>
+              <span className="mt-0">Rp.{props.harga}.-</span>
               <br />
               <span>Warna: {props.warna}</span>
               <br />
               <span>Size: {props.size}</span>
+              <br />
+              <span>Stock: {props.stock}</span>
+              <br />
+              <span>Weight: {props.weight}</span>
+              <br />
+
               <div className="mt-4 text-center">
                 <button
                   type="button"
-                  className="btn btn-outline-dark"
+                  className="btn btn-outline-dark btn-block"
                   value={props.id}
                   onClick={(e) => postTransaction(e)}
                 >

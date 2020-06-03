@@ -24,7 +24,7 @@ const Category = (props, changeRouter) => {
                   src={require("../images/product/1.jpg")}
                   alt="tops"
                   value={2}
-                  onClick={() => changeRouter(2)}
+                  onClick={(e) => changeRouter(e)}
                 />
                 <h4 className="pt-3 textCategory text-uppercase">Tops</h4>
               </Link>

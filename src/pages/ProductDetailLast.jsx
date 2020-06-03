@@ -23,6 +23,8 @@ class ProductDetailLast extends React.Component {
           nama={this.props.detailData.name}
           warna={this.props.detailData.color}
           size={this.props.detailData.size}
+          stock={this.props.detailData.stock}
+          weight={this.props.detailData.weight}
           id={this.props.detailData.id}
           postCart={(e) => this.props.postCart(e)}
           {...this.props}

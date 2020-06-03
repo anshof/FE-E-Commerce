@@ -10,7 +10,15 @@ import { getProduct, getProductCategory } from "../store/action/actionProduct";
 class Product extends Component {
   componentDidMount = async () => {
     console.log("cek mounted");
-    this.props.getProduct();
+
+    const paramCategory = await this.props.match.params.category;
+    console.log("ini param", paramCategory);
+    if (paramCategory) {
+      this.props.getProductCategory(paramCategory);
+    } else {
+      this.props.getProduct();
+    }
+    console.warn("ini param category", this);
   };
 
   // change router detail to get product detail
@@ -21,63 +29,54 @@ class Product extends Component {
 
   render() {
     console.warn("cek dari product", this.props.data);
-    const splitArray = (array, size) => {
-      if (!array.length) {
-        return [];
-      }
-      const head = array.slice(0, size);
-      const tail = array.slice(size);
-      return [head, ...splitArray(tail, size)];
-    };
-    const data = this.props.dataProducts.data;
-    const splitListTest = splitArray(data, 4);
     return (
-      <div>
+      <div style={{ marginTop: "80px" }}>
         <Navigation {...this.props} />
-        {splitListTest.map((baris) => (
-          <div
-            className="container border-top row"
-            style={{
-              marginLeft: "auto",
-              marginRight: "auto",
-              padding: "0",
-            }}
-          >
-            {baris.map((item) => (
-              <div
-                className="col-sm-3 d-flex justify-content-center "
-                style={{
-                  marginRight: "auto",
-                  marginLeft: "auto",
-                  padding: "0",
-                }}
-              >
-                <div className="detProd">
-                  <div className="d-flex justify-content-center card">
-                    <img
-                      className="text-center card-img-top"
-                      src={item.img}
-                      alt={item.name}
-                    />
-                    <div className="card-body">
-                      <p className="card-text font-weight-bold text-uppercase">
-                        {item.name}
-                      </p>
-                      <p>Rp {item.price}</p>
-                      <button
-                        className="btn btn-outline-dark"
-                        value={item.id}
-                        onClick={(e) => this.changeRouterDetail(e)}
-                      >
-                        See details
-                      </button>
+        <div className="container row" style={{ marginLeft: "200px" }}>
+          {this.props.data.data.map((baris) => (
+            <div
+              className=""
+              style={{
+                width: "300px",
+                marginLeft: "50px",
+                marginBottom: "50px",
+              }}
+            >
+              <div className="col-sm-3 d-flex justify-content-center ">
+                <div className="">
+                  <img
+                    className="text-center"
+                    src={baris.img}
+                    alt={baris.name}
+                    style={{ width: "300px" }}
+                  />
+                  <div className="d-flex my-3 justify-content-between">
+                    <div>
+                      <span className="font-weight-bold text-capitalize">
+                        {baris.name}
+                      </span>
+                      <br />
+                      <div className="text-left">
+                        Color :
+                        <span className="text-capitalize"> {baris.color}</span>
+                      </div>
                     </div>
+                    <span>Rp {baris.price}</span>
+                  </div>
+                  <div className="text-left">
+                    <button
+                      className="text-left btn btn-outline-dark"
+                      value={baris.id}
+                      onClick={(e) => this.changeRouterDetail(e)}
+                    >
+                      See details
+                    </button>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
         <Footer />
       </div>
     );
@@ -86,7 +85,8 @@ class Product extends Component {
 const mapStateToProps = (state) => {
   return {
     login: state.user.is_login,
-    dataProducts: state.product,
+    dataProducts: state.product.dataProducts,
+    data: state.product,
   };
 };
 

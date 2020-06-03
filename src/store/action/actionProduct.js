@@ -25,12 +25,19 @@ export const getProductCategory = (category) => {
     await axios
       .get("http://0.0.0.0:5050/product")
       .then((response) => {
+        let id;
+        if (category === "dress") {
+          id = 1;
+        } else if (category === "tops") {
+          id = 2;
+        } else {
+          id = 3;
+        }
         dispatch({
           type: "REQUEST_CATEGORY_PRODUCT",
-          payload: response.data.filter(
-            (item) => item.product_type_id === category
-          ),
+          payload: response.data.filter((item) => item.product_type_id === id),
         });
+        console.log("dari product category", response);
       })
       .catch((error) => {
         console.log(error);
