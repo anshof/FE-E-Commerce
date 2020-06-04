@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const baseUrl = "https://ecommercebe.shofisticated.my.id";
 export const getTransDetail = (props) => {
   return async (dispatch) => {
     const token = localStorage.getItem("token");
     await axios
-      .get("http://0.0.0.0:5050/cart", {
+      .get(baseUrl + "/cart", {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",
@@ -31,7 +31,7 @@ export const postCart = (item) => {
     };
     const myJSON = JSON.stringify(bodyRequest);
     await axios
-      .post("http://0.0.0.0:5050/cart", myJSON, {
+      .post(baseUrl + "/cart", myJSON, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",
@@ -51,7 +51,7 @@ export const deleteTrans = (item) => {
   return async (dispatch) => {
     const token = localStorage.getItem("token");
     await axios
-      .delete("http://0.0.0.0:5050/cart/" + item, {
+      .delete(baseUrl + "/cart/" + item, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",
@@ -74,7 +74,7 @@ export const checkOut = () => {
     };
     const myJSON = JSON.stringify(bodyRequest);
     await axios
-      .post("http://0.0.0.0:5050/cart/checkout", myJSON, {
+      .post(baseUrl + "/cart/checkout", myJSON, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",

@@ -1,10 +1,12 @@
 import axios from "axios";
 
+const baseUrl = "https://ecommercebe.shofisticated.my.id";
+
 export const doLogin = () => {
   return async (dispatch, getState) => {
     await axios({
       method: "GET",
-      url: "http://0.0.0.0:5050/login",
+      url: baseUrl + "/login",
       params: {
         username: getState().user.namaPengguna,
         password: getState().user.kataKunci,
@@ -33,7 +35,7 @@ export const signUp = () => {
     };
     const json = JSON.stringify(bodyRequest);
     await axios
-      .post("http://0.0.0.0:5050/client", json, {
+      .post(baseUrl + "/client", json, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",
@@ -59,7 +61,7 @@ export const getProfile = () => {
   return async (dispatch, getState) => {
     await axios({
       method: "GET",
-      url: "http://0.0.0.0:5050/login",
+      url: baseUrl + "/login",
       params: {
         username: getState().user.namaPengguna,
         password: getState().user.kataKunci,
@@ -105,7 +107,7 @@ export const postCustomer = (props) => {
 
     if (status === "buyer") {
       await axios
-        .post("http://0.0.0.0:5050/customer/profile", myJSON, {
+        .post(baseUrl + "/customer/profile", myJSON, {
           headers: {
             "Content-Type": "application/json; charset=utf-8",
             Accept: "application/json; charset=utf-8",
@@ -120,7 +122,7 @@ export const postCustomer = (props) => {
         });
     } else if (status === "seller") {
       await axios
-        .post("http://0.0.0.0:5050/seller/profile", myJSON, {
+        .post(baseUrl + "/seller/profile", myJSON, {
           headers: {
             "Content-Type": "application/json; charset=utf-8",
             Accept: "application/json; charset=utf-8",

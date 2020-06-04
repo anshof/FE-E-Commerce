@@ -1,11 +1,13 @@
 import axios from "axios";
 
+const baseUrl = "https://ecommercebe.shofisticated.my.id";
+
 export const getProduct = (category) => {
   return async (dispatch, getState) => {
     console.warn("cek getProduct");
     await axios({
       method: "GET",
-      url: "http://0.0.0.0:5050/product",
+      url: baseUrl + "/product",
     })
       .then(async (response) => {
         dispatch({
@@ -23,7 +25,7 @@ export const getProduct = (category) => {
 export const getProductCategory = (category) => {
   return async (dispatch) => {
     await axios
-      .get("http://0.0.0.0:5050/product")
+      .get(baseUrl + "/product")
       .then((response) => {
         let id;
         if (category === "dress") {
@@ -47,7 +49,7 @@ export const getProductCategory = (category) => {
 
 export const getDetailProduct = (category) => {
   return async (dispatch) => {
-    const response = await axios.get("http://0.0.0.0:5050/product/" + category);
+    const response = await axios.get(baseUrl + "/product/" + category);
     dispatch({
       type: "REQUEST_CATEGORY_PRODUCT_BY_ID",
       payload: response.data,
@@ -73,7 +75,7 @@ export const postProduct = () => {
     const json = JSON.stringify(bodyRequest);
     const token = localStorage.getItem("token");
     await axios
-      .post("http://0.0.0.0:5050/product", json, {
+      .post(baseUrl + "/product", json, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           Accept: "application/json; charset=utf-8",
