@@ -1,4 +1,4 @@
-sudo docker build -f "Dockerfile" -t ian18ishar/fe:$TRAVIS_BUILD_NUMBER .
+sudo docker build -f "Dockerfile" -t anashofiya/fe:$TRAVIS_BUILD_NUMBER .
 sudo docker push ian18ishar/fe:$TRAVIS_BUILD_NUMBER
 
 echo $GCLOUD_SERVICE_KEY_PRD | base64 --decode > ${HOME}/gcloud-service-key.json
@@ -10,4 +10,4 @@ kubectl config view
 kubectl config current-context
 
  ## deploy api server
-kubectl -n ian set image deployment/app-2048 app-2048=ian18ishar/fe:$TRAVIS_BUILD_NUMBER
+kubectl -n alta5 set image deployment/app-2048 app-2048=anashofiya/fe:$TRAVIS_BUILD_NUMBER
