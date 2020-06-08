@@ -15,7 +15,7 @@ const Navigation = (props, postSignout) => {
     <nav className="navbar fixed-top navbar-expand-lg navbar-light">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          SOPHISTICATED tes
+          SOPHISTICATED cek edit
         </Link>
         <button
           className="navbar-toggler"
