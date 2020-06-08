@@ -1,5 +1,5 @@
-sudo docker build -f "Dockerfile" -t anashofiya/fe:$TRAVIS_BUILD_NUMBER .
-sudo docker push anashofiya/fe:$TRAVIS_BUILD_NUMBER
+sudo docker build -f "Dockerfile" -t anashofiya/react-tutorial:$TRAVIS_BUILD_NUMBER .
+sudo docker push anashofiya/react-tutorial:$TRAVIS_BUILD_NUMBER
 
 echo $GCLOUD_SERVICE_KEY_PRD | base64 --decode > ${HOME}/gcloud-service-key.json
 gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
