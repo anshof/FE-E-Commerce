@@ -1,2 +1,2 @@
 # FE-E-Commerce
-[link deploy](https://sophisticated.netlify.app/)
+[link deploy](https://ecommerce.shofisticated.my.id/)
